@@ -1,7 +1,13 @@
 const express = require("express");
 const helmet = require("helmet");
 const dotenv = require("dotenv");
+const csrf = require("csurf");
 dotenv.config({ debug: true });
+
+// config anti csrf
+const antiCSRF = csrf({
+  cookie: true,
+});
 
 // initialisasi app
 const app = express();
@@ -16,6 +22,7 @@ app.get("/health", (req, res, next) => {
 // router path
 
 const userRoute = require("./routes/User.routes.js");
+const csurf = require("csurf");
 
 app.use("/api", userRoute);
 

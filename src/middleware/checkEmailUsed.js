@@ -6,7 +6,7 @@ module.exports = async function checkEmailUsed(req, res, next) {
   const { status, message } = await checkEmailUsedService(email);
 
   if (status === "invalid") {
-    return res.status(403).json({ status: "invalid", message: message });
+    return res.status(400).json({ status: "invalid", message: message });
   } else {
     next();
   }

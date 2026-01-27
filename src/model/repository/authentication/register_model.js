@@ -3,7 +3,7 @@ const db = require("../../../config/db.js");
 async function registerModel(user_id, email, username, password, created_at) {
   // result query
 
-  const [queryResult] = await db.execute(
+  const [queryResult] = await db.query(
     "insert into users (user_id, email, username, password, created_at) values (?, ?, ?, ?, ?)",
     [user_id, email, username, password, created_at],
   );
