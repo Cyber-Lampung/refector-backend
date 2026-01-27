@@ -1,0 +1,14 @@
+# PORT
+PORT=
+
+# Secret key
+
+secretKey=
+
+# Database
+
+HOST=
+DB_USER=
+DB_PASSWORD=
+PORT_MYSQL=
+DATABASE=
