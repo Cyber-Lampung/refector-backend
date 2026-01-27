@@ -26,6 +26,7 @@ async function registerService(email, username, password) {
     created_at,
   );
 
+  // check response hasil dari register model
   if (response) {
     return { status: "succes", message: "succes created user" };
   } else {

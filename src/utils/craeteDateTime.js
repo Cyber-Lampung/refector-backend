@@ -1,5 +1,7 @@
 function createDateTime() {
-  const date = new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" });
+  const now = new Date();
+
+  const date = now.toISOString().slice(0, 19).replace("T", " ");
 
   return date;
 }

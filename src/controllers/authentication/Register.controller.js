@@ -3,9 +3,13 @@ const registerService = require("../../services/authentication/Register.service.
 async function RegisterController(req, res, next) {
   const { email, username, password } = req.body;
 
-  const responseService = await registerService(email, username, password);
+  const { status, message } = await registerService(email, username, password);
 
-  console.log(responseService);
+  if (status) {
+    return res.status(201).json({ status: "succes", message });
+  } else {
+    return res.status(204).json({ status: "invalid", message });
+  }
 }
 
 module.exports = { RegisterController };
