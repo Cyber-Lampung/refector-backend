@@ -1,7 +1,7 @@
 const registerService = require("../../services/authentication/Register.service.js");
 
 async function RegisterController(req, res, next) {
-  try {
+
     const { email, username, password } = req.body;
 
     const { status, message, data } = await registerService(
@@ -22,9 +22,9 @@ async function RegisterController(req, res, next) {
     } else {
       return res.status(204).json({ status: status, message });
     }
-  } catch {
-    return res.status(400).json({ status: "invalid", message: "bad request" });
-  }
+  // } catch {
+  //   return res.status(400).json({ status: "invalid", message: "bad request" });
+  // }
 }
 
 module.exports = { RegisterController };

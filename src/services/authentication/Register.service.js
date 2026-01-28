@@ -1,4 +1,4 @@
-const crypto = require("crypto").promises;
+const crypto = require("crypto");
 const register_model = require("../../model/repository/authentication/register_model.js");
 const saveSessionsModel = require("../../model/repository/authentication/saveSessions.js");
 const createDateTime = require("../../utils/craeteDateTime.js");
@@ -43,7 +43,13 @@ async function registerService(email, username, password) {
 
   // console.log(responseSaveSession); => testing
 
-  const response = await register_model(user_id, email, username, passwordHash);
+  const response = await register_model(
+    user_id,
+    email,
+    username,
+    passwordHash,
+    created_at,
+  );
 
   // check response hasil dari register model
   if (responseSaveSession.created & response) {
