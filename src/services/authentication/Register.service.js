@@ -1,3 +1,4 @@
+const crypto = require("crypto").promises;
 const register_model = require("../../model/repository/authentication/register_model.js");
 const saveSessionsModel = require("../../model/repository/authentication/saveSessions.js");
 const createDateTime = require("../../utils/craeteDateTime.js");
@@ -8,9 +9,7 @@ const createSessionService = require("./createSession.service.js");
 async function registerService(email, username, password) {
   // validasi inputan user
   if (!email || !username || !password) {
-    return res
-      .status(409)
-      .json({ status: "invalid", message: "invalid register fields kosong" });
+    return { status: "invalid", message: "invalid register fields kosong" };
   }
 
   if (password.length < 8) {
@@ -27,10 +26,17 @@ async function registerService(email, username, password) {
 
   const { createSessions, sessions_id } = await createSessionService(user_id);
 
+  // hash session dan simpan ke database
+
+  const hashSession = await crypto
+    .createHash("sha256")
+    .update(createSessions)
+    .digest("hex");
+
   const responseSaveSession = await saveSessionsModel(
     sessions_id,
     user_id,
-    createSessions,
+    hashSession,
     created_at,
     expiresAt,
   );
@@ -44,7 +50,7 @@ async function registerService(email, username, password) {
     return {
       status: "succes",
       message: "succes created user",
-      data: responseSaveSession.data,
+      data: createSessions,
     };
   } else {
     return { status: "invalid", message: "invalid created user" };
