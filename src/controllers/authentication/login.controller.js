@@ -7,7 +7,7 @@ module.exports = async function loginControllers(req, res, next) {
     const responseService = await loginService(email, password);
 
     if (responseService.status === "success") {
-      res.cookie("session_id", responseService.session, {
+      res.cookie("session", responseService.session, {
         httpOnly: true,
         secure: true,
         sameSite: "Strict",
