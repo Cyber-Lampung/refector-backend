@@ -1,12 +1,14 @@
 const crypto = require("crypto");
 const register_model = require("../../model/repository/authentication/register_model.js");
 const saveSessionsModel = require("../../model/repository/authentication/saveSessions.js");
-const createDateTime = require("../../utils/craeteDateTime.js");
 const generateUUID = require("../../utils/generateUUID.js");
 const hashPassword = require("../../utils/password.utils.js");
 const createSessionService = require("./createSession.service.js");
+const Time = require("../../utils/craeteDateTime.js");
 
 async function registerService(email, username, password) {
+  const { createDateTime, expiresAt } = Time();
+
   // validasi inputan user
   if (!email || !username || !password) {
     return { status: "invalid", message: "invalid register fields kosong" };
@@ -19,8 +21,8 @@ async function registerService(email, username, password) {
   // yang dibutuhkan user
   const user_id = await generateUUID();
   const passwordHash = await hashPassword(password);
-  const created_at = createDateTime.createDateTime();
-  const expiresAt = createDateTime.expiresAt();
+  const created_at = createDateTime();
+  const expires_at = expiresAt();
 
   // kirim ini ke database
 
@@ -28,17 +30,14 @@ async function registerService(email, username, password) {
 
   // hash session dan simpan ke database
 
-  const hashSession = await crypto
-    .createHash("sha256")
-    .update(createSessions)
-    .digest("hex");
+  const hashSession = await crypto.createHash("sha256").digest("hex");
 
   const responseSaveSession = await saveSessionsModel(
     sessions_id,
     user_id,
     hashSession,
     created_at,
-    expiresAt,
+    expires_at,
   );
 
   // console.log(responseSaveSession); => testing

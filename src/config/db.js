@@ -11,6 +11,8 @@ const db = mysql2.createPool({
   waitForConnections: true, // Tambahkan ini agar aplikasi menunggu koneksi tersedia
   queueLimit: true,
   connectionLimit: 10,
+  timezone: "Asia/Jakarta",
+  dateStrings: true,
 });
 
 module.exports = db;
