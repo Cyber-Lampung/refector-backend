@@ -7,15 +7,15 @@ const checkEmailUsed = require("../middleware/checkEmailUsed.js");
 const loginControllers = require("../controllers/authentication/login.controller.js");
 const editUserController = require("../controllers/authentication/editUser.controller.js");
 const logoutController = require("../controllers/authentication/logout.controller.js");
-const db = require("../config/db.js");
+const checkUserController = require("../controllers/authentication/checkUser.controller.js");
+const checkTokenHeader = require("../middleware/checkTokenHeader.js");
 
 // initialisasi router
 const router = express.Router();
 
 // list users
-router.get("/users", async (req, res, next) => {
-  const [rows] = await db.query("SELECT * FROM users");
-  res.json(rows);
+router.get("/users", checkTokenHeader, (req, res, next) => {
+  checkUserController(req, res, next);
 });
 
 // login

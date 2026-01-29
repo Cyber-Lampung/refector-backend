@@ -6,7 +6,5 @@ module.exports = async function getSessionTokenFromDb(user_id) {
     [user_id],
   );
 
-  console.log(queryResult);
-
   return queryResult[0].session_token;
 };
