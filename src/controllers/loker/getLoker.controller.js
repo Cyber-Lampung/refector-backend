@@ -3,7 +3,6 @@ const getLokerService = require("../../services/loker/getLoker.service.js");
 module.exports = async function getJobsController(req, res, next) {
   try {
     const resGetLokerServices = await getLokerService();
-    console.log(resGetLokerServices);
 
     if (resGetLokerServices.status === "succes") {
       return res.status(200).json({
