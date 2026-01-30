@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const { v4: uuidv4 } = require("uuid");
 
-module.exports = async function (user_id) {
+module.exports = async function createSessionService(user_id) {
   const sessions_id = uuidv4();
 
   // buat payload

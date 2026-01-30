@@ -22,10 +22,12 @@ app.get("/health", (req, res, next) => {
 // router path
 
 const userRoute = require("./routes/User.routes.js");
+const lokerRoute = require("./routes/loker.routes.js");
+
 const csurf = require("csurf");
 
 app.use("/api", userRoute);
-
+app.use("/api", lokerRoute);
 // error handle
 app.use((req, res, next) => {
   return res.status(404).json({ status: "invalid", message: "invalid path " });
