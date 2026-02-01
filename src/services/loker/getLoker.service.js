@@ -35,6 +35,7 @@ module.exports = async function getLokerService() {
   const allJobs = [...data, ...resApi2];
 
   //   const resFilterJobs = await filterJobs(data.hits);
+  console.log(resApi2);
 
   return { status: "succes", message: "suscces get data jobs", data: resApi2 };
 };
