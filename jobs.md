@@ -1,15 +1,26 @@
 {
-"id": "QGpWlBM",
-"role": "Senior Industrial Designer",
-"company_name": "Cirrus Aircraft",
-"company_num_employees": null,
-"employment_type": null,
-"location": "Duluth, MN",
-"remote": false,
-"logo": null,
-"url": "https://findwork.dev/QGpWlBM/senior-industrial-designer-at-cirrus-aircraft",
-"text": "<h3>Job description</h3>Job Summary<br>As a key member of the Interiors Engineering team, the Senior Industrial Designer plays a critical role in shaping the user experience and aesthetic identity of aircraft seats and interiors. This role is responsible for the conceptual design of seating systems, cabin furnishings, and interior components—balancing form, function, ergonomics, and manufacturability. You will bring to life the Cirrus Visual Brand Language (VBL), influencing how customers experience our aircraft through thoughtful, cohesive, and high-impact design solutions.<br><br>Duties and Responsibilities/Essential Functions<br>•\tCreate innovative, visually compelling, and production-ready designs for interior furnishings, seating, and ergonomic interfaces.<br>•\tTranslate ideas into effective visual representations using hand sketches, digital renderings, physical models, and prototypes.<br>•\tMaintain and evolve the Cirrus Visual Brand Language across products to ensure consistent and elevated user experience.<br>•\tGuide the design process from ideation through production, applying deep knowledge of geometry, materials, and manufacturing processes.<br>•\tSpecify colors, materials, and finishes (CMF) based on both brand direction and operational requirements such as durability, comfort, and certification.<br>•\tPartner with engineers, product managers, manufacturing, certification, and customer experience teams to refine and implement designs.<br>•\tGather and define design requirements through direct interaction with internal stakeholders and external customers, considering aesthetic, ergonomic, regulatory, and operational needs.<br>•\tDrive rapid prototyping and user testing to refine design decisions and achieve optimal fit, finish, and usability.<br>•\tCollaborate with internal and external partners to refine production methods, optimize materials, and address feasibility constraints.<br> <br>Qualifications<br>To perform this job successfully, an individual must be able to perform each essential function satisfactorily. The requirements listed below are representative of the knowledge, skill, and/or ability required. Reasonable accommodations may be made to enable qualified individuals with disabilities to perform the essential functions.<br><br>•\tBachelor’s degree in Industrial Design or a related discipline required.<br>•\tMinimum of 4-7 years of progressive design experience.<br>•\tPrior experience in aviation, automotive, or marine interiors preferred.<br>•\tDemonstrated track record of launching production-ready products with strong user and business impact.<br>•\tStrong portfolio showcasing innovative, real-world design outcomes.<br>•\tAdvanced skills in visual storytelling, sketching, and rendering.<br>•\tDeep understanding of CMF selection for regulated environments.<br>•\tProficiency in Computer-Aided Industrial Design (CAID) software such as Autodesk Alias, Rhino, ICEM Surf, or Adobe Creative Suite.<br>•\tFamiliarity with CAD and PLM tools preferred (e.g., PTC Creo and Windchill).<br>•\tClass A surfacing capabilities are considered a strong plus.<br>•\tExcellent communication and presentation skills.<br>•\tAbility to balance design vision with technical and business constraints.<br>•\tHighly collaborative, curious, and adaptable in a fast-paced development environment.<br>",
-"date_posted": "2026-01-29T18:58:00Z",
-"keywords": [],
-"source": "Coroflot"
+"description": "Acuity Analytics (the trading name of Acuity Knowledge Partners) is a global, tech-first organisation helping financial institutions and corporates make better decisions through research, data, analytics and AI-enabled solutions. We combine deep financial services expertise with strong engineering, digital and AI capabilities to solve complex, real-world problems. With a team of 7,200 analysts, data specialists and technologists across 28 locations, we work with more than 800 organisations worl…",
+"title": "Fund Operations",
+"salary_is_predicted": "0",
+"created": "2026-01-20T16:30:01Z",
+"adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiTnYxYUExbl84QkdqN3RsSC1Sb21YQSIsImkiOiI1NTkyMjU0NDg4In0.QDehewszbjkqcKQt_m2humoTvTcSN6SZYpFpk4c3s_s",
+"**CLASS**": "Adzuna::API::Response::Job",
+"id": "5592254488",
+"category": {
+"label": "Accounting & Finance Jobs",
+"**CLASS**": "Adzuna::API::Response::Category",
+"tag": "accounting-finance-jobs"
+},
+"redirect_url": "https://www.adzuna.in/land/ad/5592254488?se=Nv1aA1n_8BGj7tlH-RomXA&utm_medium=api&utm_source=2d284a45&v=77F61B5BB181D4347593BCC1AFBDA42328B754FB",
+"company": {
+"display_name": "Acuity Analytics",
+"**CLASS**": "Adzuna::API::Response::Company"
+},
+"location": {
+"**CLASS**": "Adzuna::API::Response::Location",
+"display_name": "India",
+"area": [
+"India"
+]
+}
 },

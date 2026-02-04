@@ -9,10 +9,15 @@ const db = mysql2.createPool({
   port: process.env.PORT_MYSQL,
   database: process.env.DATABASE,
   waitForConnections: true, // Tambahkan ini agar aplikasi menunggu koneksi tersedia
-  queueLimit: true,
+  queueLimit: 0,
   connectionLimit: 10,
+  waitForConnections: true,
+  connectTimeout: 1000, // berikan batasan untuk setelah setiap permintaan
   timezone: "Asia/Jakarta",
   dateStrings: true,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 module.exports = db;

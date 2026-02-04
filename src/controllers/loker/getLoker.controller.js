@@ -1,4 +1,4 @@
-const getLokerService = require("../../services/loker/getLoker.service.js");
+const getLokerService = require("../../services/loker/getLokerFromApi.service.js");
 
 module.exports = async function getJobsController(req, res, next) {
   try {
@@ -8,7 +8,7 @@ module.exports = async function getJobsController(req, res, next) {
       return res.status(200).json({
         status: "succes",
         message: "succes get data jobs",
-        jobs: resGetLokerServices.data,
+        list: resGetLokerServices.list,
       });
     } else {
       return res
@@ -16,6 +16,6 @@ module.exports = async function getJobsController(req, res, next) {
         .json({ status: "invalid", message: "invalid get data jobs" });
     }
   } catch (error) {
-    return error;
+    return res.status(400).json({ status: "invalid", error: error.code });
   }
 };

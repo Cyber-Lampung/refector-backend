@@ -32,6 +32,6 @@ module.exports = async function checkUserController(req, res, next) {
     });
     // console.log(response);
   } catch {
-    return res.status(409).json({ status: "invalid", message: "bad request" });
+    return res.status(400).json({ status: "invalid", message: "bad request" });
   }
 };
