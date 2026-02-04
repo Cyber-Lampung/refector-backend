@@ -4,7 +4,7 @@ async function registerModel(user_id, email, username, password, created_at) {
   // console.log(user_id, email, username, password, created_at);
   // result query
   const [queryResult] = await db.query(
-    "insert into users (user_id, email, username, password, created_at, updated_at) values (?, ?, ?, ?, NOW(), NOW())",
+    "insert into users (user_id, email, username, password, created_at) values (?, ?, ?, ?, NOW())",
     [user_id, email, username, password, created_at],
   );
 

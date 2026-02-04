@@ -25,12 +25,14 @@
   "type": "commonjs",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
     "crypto": "^1.0.1",
     "crypto-js": "^4.2.0",
     "csurf": "^1.11.0",
     "dotenv": "^17.2.3",
     "jsonwebtoken": "^9.0.3",
     "mysql2": "^3.16.1",
+    "nodemailer": "^7.0.13",
     "serpapi": "^2.2.1",
     "uuid": "^13.0.0",
     "uuidv4": "^6.2.13"

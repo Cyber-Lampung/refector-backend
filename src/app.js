@@ -2,6 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 const dotenv = require("dotenv");
 const csrf = require("csurf");
+const cookieParser = require("cookie-parser");
 dotenv.config({ debug: true });
 
 // config anti csrf
@@ -12,7 +13,9 @@ const antiCSRF = csrf({
 // initialisasi app
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 app.use(helmet());
+app.use(antiCSRF());
 
 // health route
 app.get("/health", (req, res, next) => {
@@ -20,7 +23,6 @@ app.get("/health", (req, res, next) => {
 });
 
 // router path
-
 const userRoute = require("./routes/User.routes.js");
 const lokerRoute = require("./routes/loker.routes.js");
 

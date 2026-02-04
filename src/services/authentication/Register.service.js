@@ -5,6 +5,7 @@ const generateUUID = require("../../utils/generateUUID.js");
 const hashPassword = require("../../utils/password.utils.js");
 const createSessionService = require("./createSession.service.js");
 const Time = require("../../utils/craeteDateTime.js");
+const nodemailerConfig = require("../../config/nodemailer.config.js");
 
 async function registerService(email, username, password) {
   const { createDateTime, expiresAt } = Time();
@@ -52,11 +53,20 @@ async function registerService(email, username, password) {
 
   // check response hasil dari register model
   if (responseSaveSession.created & response) {
-    return {
-      status: "succes",
-      message: "succes created user",
-      data: createSessions,
-    };
+    const checkSendMail = await nodemailerConfig(email);
+
+    if (checkSendMail) {
+      return {
+        status: "succes",
+        message: "succes created user",
+        data: createSessions,
+      };
+    } else {
+      return {
+        status: "invalid",
+        message: "invalid created user, not valid email",
+      };
+    }
   } else {
     return { status: "invalid", message: "invalid created user" };
   }

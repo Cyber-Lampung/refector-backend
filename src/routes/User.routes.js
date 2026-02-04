@@ -24,7 +24,7 @@ router.post("/login", mitigasiSql, (req, res, next) => {
 });
 
 // register
-router.post("/register", checkEmailUsed, mitigasiSql, (req, res, next) => {
+router.post("/register", mitigasiSql, (req, res, next) => {
   RegisterController(req, res, next);
 });
 
